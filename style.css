@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+
+body{
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif; 
+}
+
+body *{
+    box-sizing: border-box; 
+}
+
+.main-login{
+    /*100vw = 1000px e 1vh = 10px */
+    width: 100vw; /* width=largura / vw=pocentagem da largura da sua viewport */
+    height: 100vh; /*height=altura / segue a mesma logica do width*/
+    background: #201b2c ;
+    display: flex; /*serve para organizar os conteudos dentro da div*/
+    justify-content: center;/*centraliza os elementos no eixo x*/
+    align-items: center;/*centraliza os elementos no eixo y*/
+}
+
+.left-login{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /*orfaniza um embaixo do outro*/
+}
+
+.left-login > h1 {
+    font-size: 3vw; /*titulo responsivo*/
+    color: #77ffc0;
+}
+.left-login-image{
+    width: 30vw; /*imagem respansia*/
+
+}
+
+
+.right-login{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+.card-login{
+    width: 60%; /*Pega 60% de 50vh da div direita, pois é onde esta o card-login e vsi tomar como tamanho*/
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column; 
+    padding: 30px 35px; /*margens dento do componenente. primeiro valor refere-se a eixo y*/
+    background: #2f2841;
+    border-radius: 20px; /*arredonda as bordas*/
+    box-shadow: 0px 10px 40px #00000056; /*define a sombra do card. primeiro valor = x, segundo valor = cima ou baixo, terceiro = bloor, quarto = cor*/ 
+}
+
+.card-login > h1{
+    color: #00ff88;
+    font-weight: 800; /*grossura da fonte*/
+    margin: 0; 
+}
+
+.textfield{
+    width: 100%;
+    display: flex; 
+    flex-direction: column; /*inverte a direção dois eixos comparado ao justify-content, ou seja justify-content passa a ser o eixo y e o flex-direction o eixo x*/
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+.textfield > input{
+    width: 100%;
+    border: none; /*não define nenhuma borda*/
+    border-radius: 10px;
+    padding: 15px; /*quando coloca apenas um valor, esse valor vale para o eixo x e o y*/
+    background: #514869;
+    color: #f0ffffde;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px #00000056;
+    outline: none; /*tira a caixa de seleção*/
+    box-sizing: border-box; /*div filho sera impedido de ultrapassar o tamnho da div pai*/
+}
+
+.textfield > label{
+    color: #f0ffffde;
+    margin-bottom: 10px;  
+}
+
+.textfield > input::placeholder{
+    color: #f0ffff94;
+}
+
+.btn-login{
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase; /*deixa o texto em capslock*/
+    font-weight: 800;
+    letter-spacing: 3px; /*espaçamento das letras do texto*/
+    color: #2b134b;
+    background: #00ff88;
+    cursor: pointer; /*deixa o cursor com mãozinha de ação*/
+    box-shadow: 0px 10px 40px -12px #00ff8052;
+}
+
+/*enquanto for uma tela de 950px adicione os seguintes elementos:*/
+@media only screen and (max-width: 950px){
+    .card-login{
+        width: 85%;
+    }    
+}
+
+@media only screen and (max-width: 600px){
+    .main-login{
+      flex-direction: column ;  
+    }
+    .left-login > h1{
+        display: none;
+    }
+
+    .left-login{
+        width: 100%;
+        height: auto;
+    }
+
+    .right-login{
+        width: 100%;
+        height: auto;
+    }
+
+    .left-login-image{
+        width: 40vw;
+    }
+
+    .card-login{
+        width: 90%;
+    }
+
+}
